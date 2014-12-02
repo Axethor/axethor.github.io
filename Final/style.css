@@ -1,0 +1,118 @@
+body {
+	background-color: black;
+	padding: 2em;
+}
+
+.wrapper {
+	/*display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;*/
+	display: flex;
+	/* -webkit-flex-flow: row wrap;*/
+	flex-flow: row wrap;
+	font-weight: bold;
+}
+/*Select all the elements within wrapper*/
+.wrapper > * {
+	color: gold;
+	background-color: darkred;
+	padding: 10px;
+	flex: 1 100%;
+}
+.head {
+	/* background-image: url(header.jpg);
+	background-repeat: no-repeat;
+	background-size: cover; */
+}
+h1 {
+	text-align: center;
+	font-size: 300%;
+	text-shadow: 3px 3px 3px #F4E8BC;
+}
+.navigation {
+	list-style: none;
+	margin: 0;
+	background: darkorange;
+	/* display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;*/
+	display: flex;
+	/* -webkit-flex-flow: row wrap;*/
+	justify-content: space-around; /*flex-start, flex-end, center, space-between*/
+}
+.navigation a {
+	text-decoration: none;
+	display: block;
+	padding: 10px;
+	color: white;
+}
+.navigation a:hover {
+	background: darkorange;
+}
+.footer {
+	text-align: center;
+	background: darkblue;
+}
+.main {
+	background: black;
+}
+.aside-1 {
+	text-align: left;
+	background: tan;
+}
+.aside-2 {
+	text-align: center;
+	background: hotpink;
+}
+.main ul {
+	width: 10em;
+	margin: 0 auto;	
+	list-style-image: url(listLogo.png)
+}
+
+img{float:right;
+	width:25%;}
+	
+#googleMap {
+	text-align: left;
+	width: 50%;
+	height: 300px;}
+	
+#logo{float:left;
+	width:7%;}
+
+@media all and (min-width: 600px) {
+	.aside { flex: 1 auto; } /*both side bars share one row*/
+}
+@media all and (min-width: 800px) {
+	.main { flex: 10 0px; } /*main takes 3 times width as one sidebar*/
+	.aside-1 { order: 1; }
+	.main { order: 2; }
+	.aside-2 { order: 3; }
+	.footer { order: 4; }
+}
+@media all and (max-width: 800px) {
+	.navigation {
+	justify-content: space-around;
+	}
+	.aside-1{display:none;}
+}
+@media all and (max-width: 600px) {
+	.navigation {
+	/* -webkit-flex-flow: column wrap;*/
+	flex-flow: column wrap;
+	padding: 0;
+	}
+	img{display:none;}
+}
+.navigation a {
+	text-align: center;
+	padding: 10px;
+	border-top: 1px solid rgba(255,255,255,0.3);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.navigation li:last-of-type a { /*specify a style for last <a> element*/
+	border-bottom: none;
+}
